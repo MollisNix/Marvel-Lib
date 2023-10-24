@@ -1,0 +1,109 @@
+.comics-page {
+    padding-bottom: 105px;
+}
+
+
+.comics-banner {
+    display: flex;
+    align-items: center;
+    background-color: #232222;
+    padding: 18px 45px 18px 25px;
+}
+
+.comics-banner {
+    h1 {
+        font-size: 24px;
+        color: white;
+        width: 300px;
+    }
+
+    .left-logo {
+        margin-right: 83px;
+    }
+
+    .header-title {
+        margin-right: 385px;
+       
+    }
+}
+
+
+.comics-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 225px);
+    grid-gap: 70.5px;
+    margin-top: 49px;
+    .comics-item {
+        width: 225px;
+        height: 415px;
+
+        .comics-avatar {
+            cursor: pointer;
+        }
+        .item-info {
+            .comics-name {
+                font-size: 14px;
+                font-weight: 700;
+            }
+            
+            .comics-price {
+                font-size: 14px;
+                font-weight: 700;
+                color:  #00000099;
+
+            }
+        }
+
+        
+    }
+}
+
+// стилі для детального відображення коміксу
+.comics-detail {
+    display: flex;
+}
+
+.comics-detail-description {
+    margin-left: 50px;
+    width: 490px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.step-back-btn {
+    background-color: white;
+    border: none;
+    margin-left: 167px; 
+    max-height: 24px;
+    min-width: 76px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+.comics-title   {
+    width: 490px;
+    margin-bottom: 25px;
+}
+
+.description-text {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.09px;
+    margin-bottom: 25px;
+}
+
+.comics-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #9F0013;
+
+}
+
+.display-block {
+    display: block;
+}
+

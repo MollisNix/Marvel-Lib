@@ -1,0 +1,47 @@
+
+
+// Primary-bg-colors
+ $main-red-color: #9F0013;
+// Font-sizes
+$common-font-size: 1.8rem;
+$medium-font-size: 1.9rem;
+$large-font-size: 2.5rem;
+$mini-font-size: 1.4rem;
+
+// Theme page sizes
+$theme-large-size: 1.8rem;
+$theme-medium-size: 1.6rem;
+$theme-regular-size: 1.4rem;
+
+//Font-stacks
+
+// mixins 
+
+@mixin flex-height ($height, $amount) {
+    #{$height}: $amount;
+}
+
+
+@mixin font-face-rules ($font-family, $src, $format, $font-weight, $fotn-style) {
+    font-family: $font-family, Arial, Helvetica, sans-serif;
+    src: url($src) format($format);
+    font-weight: $font-weight;
+    font-style: $fotn-style;
+
+}
+
+@mixin font-face-rules-min($font-family, $src, $format) {
+    font-family: $font-family, Arial, Helvetica, sans-serif;
+    src: url($src) format($format);
+}
+
+@mixin use-font ($font-family, $font-weight, $fotn-style) {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: $fotn-style;
+}
+
+@mixin flex-adjusting ($flex-grow, $flex-basis) {
+    flex-grow: $flex-grow;
+    flex-basis: $flex-basis;
+}

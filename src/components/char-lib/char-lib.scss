@@ -1,0 +1,138 @@
+.char-list-block {
+    margin-right: 25px;
+}
+
+.char-lib {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.char-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+
+    
+}
+
+.char-card {
+    width: 200px;
+    height: 318px;
+    background-color: #232222;
+    box-shadow: 5px 5px 10px 0px #00000040;
+    cursor: pointer;
+    .char-name {
+        color: white;
+        font-size: 22px;
+        margin: 15px 15px 0 15px;
+    }
+}
+
+.active-char-card {
+    width: 200px;
+    height: 318px;
+    background-color: #232222;
+    box-shadow: 0px 5px 20px 0px #9F0013;
+    cursor: pointer;
+    .char-name {
+        color: white;
+        font-size: 22px;
+        margin: 15px 15px 0 15px;
+    }
+}
+
+
+.load-more-btn-block {
+    margin-top: 45px;
+    display: flex;
+    justify-content: center;    
+    margin-bottom: 45px;
+}
+
+
+
+.choosen-char {
+    box-shadow: 0px 0px 20px 0px #00000040;
+    width: 425px;
+    padding: 25px;
+    .header {
+        display: flex;
+
+        .header-right {
+            h2 {
+                margin-left: 25px;
+                font-size: 22px
+            }
+            .action-btn {
+                display: flex;
+                flex-direction: column;
+                margin-top: 35px;
+                margin-left: 25px;
+
+                button {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+    .body {
+        .char-legend {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    
+        .char-comics-list {
+            margin-top: 10px;
+            .char-comics-list-elem {
+                list-style: none;
+                margin-bottom: 10px;
+                padding: 4px 0px 4px 10px;
+                box-shadow: 5px 5px 10px 0px #00000040;
+
+                a {
+                    font-weight: 500;
+                    text-decoration: none;
+                    color: black
+                }
+            }
+        }   
+    }
+
+}
+
+.char-search {
+    margin-top: 30px;
+    padding: 25px;
+    box-shadow: 5px 5px 10px 0px #00000040;
+
+    h2 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    input[type="text"] {
+        border: none;
+        box-shadow: 5px 5px 10px 0px #00000040;
+        width: 250px;
+        height: 38px;
+        font-size: 14px;
+        margin-right: 24px;
+        padding-left: 10px;
+        outline-color:  #00000040;
+       outline-width: 0.2px;
+    }
+}
+
+
+
+
+.load-more-btn {
+    color: white;
+}
+
+// position: fixed;
+// left: 866px;
+// top: 124px;

@@ -1,0 +1,222 @@
+@use "../scss-components/variables";
+
+.header-block{
+    padding-top: 50px;
+    .header-top{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        .web-title {
+            font-size: 28px;
+            font-weight: 600;
+            font-family: "Roboto Condensed";
+            span {
+                margin-right: 10px;
+                color: variables.$main-red-color;
+            }
+        }
+        .navigation-list {
+            display: flex;
+            justify-content: flex-end;
+    
+           
+            li {
+                list-style: none;
+    
+                .bnt-after::after {
+                    font-weight: bold;
+                    color: black;
+                    margin: 0 8px;
+                    content: "/";
+                }
+                
+                .menu-btn{
+                    border: none;
+                    background-color: white;
+                    font-size: 24px;
+                    font-weight: 700;
+                    cursor: pointer;
+                    user-select: none;
+                    outline: none;
+                }
+    
+                 .comics-btn{
+                    color: black;
+                }
+
+                .active {
+                    color: variables.$main-red-color;
+                }
+        
+            }
+        }
+    }
+
+
+
+
+    .header-bottom {
+       display: flex;
+        box-shadow: 5px 5px 20px 0px #00000040;
+
+        .random-char-info {
+            display: flex;
+            flex-grow: 1;
+            flex-basis: 700px;
+            max-height: 252;
+            padding: 35px 35px 35px 40px;
+            .char-info-img-block {
+                margin-right: 30px;
+            }
+
+            .char-content {
+                .char-name {
+                    font-size: 22px;
+                    margin-bottom: 10px;
+                }
+                .char-legend {
+                    font-size: 15px;
+                    font-weight: 500;
+                    line-height: 20.41px;
+                }
+
+                .action-btn {
+                    margin-top: 13px;
+                        
+                    .regular-btn {
+                        margin-right: 40px;
+                    }
+                }
+            }
+        }
+
+        .tick-random-section {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-basis: 550px;
+            min-height: 191px;
+            max-height: 229px;
+            padding: 35px 40px;
+            background-color: #232222;
+            
+            p:first-child{
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 28.13px;
+                margin-bottom: 33px;
+            }
+
+            p {
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 28.13px;
+                color: white;
+            }
+
+            .tich-bg-img {
+                position: absolute;
+                left: 350px;
+                top: 60px;
+            }
+        }    
+    }
+}
+
+
+
+
+
+
+
+
+.main-btn-class {   
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    position: relative;
+    border: none;
+    width: 101px;
+    padding: 11px 2px;
+    font-size: 14px;
+    line-height: 16.41px;
+    text-align: center;
+    background-color:  #9F0013;
+}
+
+
+
+.main-btn-class::before {
+    border-color: white transparent;
+    border-style: solid;
+    border-width: 0 0 10px 16px;
+    content: "";
+    display: block;
+    position: absolute;
+    left: -1px;
+    top: 0px;
+    transition: none;
+    transform: rotate(180deg);
+}
+
+.main-btn-class::after {
+    border-color: white transparent;
+    border-style: solid;
+    border-width: 0 0 10px 20px;
+    content: "";
+    display: block;
+    position: absolute;
+    right: -10px;
+    bottom: -3px;
+    transition: none;
+    transform: rotate(140deg);
+}
+
+
+
+
+
+
+.tick-random-char-btn::after {
+    border-color: #232222 transparent;
+    border-style: solid;
+    border-width: 0 0 10px 20px;
+    content: "";
+    display: block;
+    position: absolute;
+    right: -10px;
+    bottom: -3px;
+    transition: none;
+    transform: rotate(140deg);
+}
+
+.tick-random-char-btn {
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    position: relative;
+    border: none;
+    width: 101px;
+    padding: 11px 2px;
+    margin-top: 13px;
+    font-size: 14px;
+    line-height: 16.41px;
+    text-align: center;
+    background-color:  #9F0013;
+    color: white;
+}
+
+.tick-random-char-btn::before {
+    border-color: #232222 transparent;
+    border-style: solid;
+    border-width: 0 0 10px 16px;
+    content: "";
+    display: block;
+    position: absolute;
+    left: -1px;
+    top: 0px;
+    transition: none;
+    transform: rotate(180deg);
+}
