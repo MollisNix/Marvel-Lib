@@ -33,10 +33,7 @@ export const HeaderBottom = () => {
                             {randomChar ? randomChar.name : "THOR"}
                         </h1>
                         <p className="char-legend">
-                             {randomChar ? randomChar.description : `As the Norse God of thunder and lightning, 
-                                                                Thor wields one of the greatest weapons ever made, the enchanted hammer Mjolnir. 
-                                                                While others have described Thor as an over-muscled, oafish imbecile, hes quite smart and compassionate...`
-                            }
+                             { randomChar?.description === '' || randomChar?.description === ' ' ? "Character without desctiption" : randomChar?.description }
                         </p>
                         <div className="action-btn">
                             <button className="regular-btn main-btn-class"><a href={randomChar?.urls[0].url} target="_blank" rel="noreferrer">HOMEPAGE</a></button>
