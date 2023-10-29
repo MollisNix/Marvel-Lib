@@ -3,6 +3,7 @@ import axios from 'axios'
 
 export const HeaderBottom = () => {
     const [randomChar, setRandomChar] = React.useState();
+    const [isChosenRandom, setIsChosenRandom] = React.useState(false);
     
     const fetchRandomCharacter = async () => {
         const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
@@ -14,8 +15,15 @@ export const HeaderBottom = () => {
     }
     
     const onClickRandom = () => {
+        setIsChosenRandom(true)
         fetchRandomCharacter()
     }
+
+    const descriptionCondition = isChosenRandom ?  randomChar?.description === '' || randomChar?.description === ' ' ? "Character without desctiption"
+        : randomChar?.description 
+        : `As the Norse God of thunder and lightning, 
+        Thor wields one of the greatest weapons ever made, the enchanted hammer Mjolnir.
+         While others have described Thor as an over-muscled, oafish imbecile, he's quite smart and compassionate...`;
 
     return (
         <div className="header-bottom">
@@ -23,7 +31,7 @@ export const HeaderBottom = () => {
                 <div className="random-char-info">
                     <div className="char-info-img-block">
                         <img 
-                            width={180} className="char-img" 
+                            width={180}  height={180} className="char-img" 
                             src={randomChar ? randomChar.thumbnail.path + '.' + randomChar.thumbnail.extension : 'img/Thumbnail.svg'} 
                             alt="Random char img" />
                     </div>
@@ -33,7 +41,7 @@ export const HeaderBottom = () => {
                             {randomChar ? randomChar.name : "THOR"}
                         </h1>
                         <p className="char-legend">
-                             { randomChar?.description === '' || randomChar?.description === ' ' ? "Character without desctiption" : randomChar?.description }
+                            {descriptionCondition}
                         </p>
                         <div className="action-btn">
                             <button className="regular-btn main-btn-class"><a href={randomChar?.urls[0].url} target="_blank" rel="noreferrer">HOMEPAGE</a></button>

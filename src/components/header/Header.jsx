@@ -12,15 +12,9 @@ const location = useLocation();
 
                 <nav className="navigation">
                     <ul className="navigation-list">
-                        {location.pathname === "/" ? <li>
-                                                        <Link  to={"/"}><button className="menu-btn bnt-after active" >Characters</button></Link>
-                                                    </li>
-                                                    :   
-                                                    <li>
-                                                        <Link  to={"/"}><button className="menu-btn bnt-after " >Characters</button></Link>
-                                                    </li> 
-                                                } 
-                        
+                        <li>
+                            <Link  to={"/"}><button className={location.pathname === "/" ? "menu-btn bnt-after active" : "menu-btn bnt-after" }>Characters</button></Link>
+                        </li>
 
     { location.pathname === "/comics" ?  <li>
                                             <Link to={"comics"}><button className="menu-btn comics-btn active"  disabled>Comics</button> </Link>
