@@ -1,8 +1,8 @@
 import React from 'react';
-import { FetchData } from '../services/query-functions';
-import { CharCard } from './char-card/Char-card';
-import { ChoseCharInfo } from './chosen-char-info/Chosen-char-info';
-import { loadDataPattern } from '../services/query-functions';
+import { FetchData } from '../../../../assets/services/query-functions';
+import { CharCard } from './Char-card/Char-card';
+import { ChoseCharInfo } from './Chosen-char-info/Chosen-char-info';
+import { loadDataPattern } from '../../../../assets/services/query-functions';
 import './char-lib.scss'
 
 

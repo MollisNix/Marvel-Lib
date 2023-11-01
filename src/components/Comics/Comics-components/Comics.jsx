@@ -1,8 +1,10 @@
 import "./comics.scss";
 import React from "react";
-import { FetchData } from "../services/query-functions";
-import { loadDataPattern } from "../services/query-functions";
-import { ComicsItem } from "./comics-item/ComicsItem";
+import { FetchData } from "../../../assets/services/query-functions";
+import { loadDataPattern } from "../../../assets/services/query-functions";
+import { ComicsItem } from "./Comics-item/ComicsItem";
+
+
 export const Comics = () => {
     const [comicsList, setComicsList] = React.useState();
     const [scrollPos, setScrollPos] = React.useState(false);
@@ -28,10 +30,13 @@ React.useEffect(() => {
 }, [scrollPos, comicsListOffset]);
 
     return (
-        <div className="comics-page">
-            <div className="comics-wrapper">
-            <ComicsItem comicsList={comicsList} />
+        <>
+            <div className="comics-page">
+                <div className="comics-wrapper">
+                     <ComicsItem comicsList={comicsList} />
+                </div>
             </div>
-        </div>
+        </>
+        
     )
 }

@@ -1,6 +1,6 @@
 import React from "react";
-import { ChosemCharComiscList } from "./chosen-char-comics-list/ChoseChar-comics-list"
-import { CharFilter } from "../char-filter/Char-filter";
+import { ChosemCharComiscList } from "../../../../Home/Header-Component/Char-Lib/Chosen-char-comics-list/ChoseChar-comics-list"
+import { CharFilter } from "../../../../Home/Header-Component/Char-Lib/Char-filter/Char-filter";
 
 export const ChoseCharInfo = ({chosenCharData, onFilter, }) => {
 const description = chosenCharData ? chosenCharData.description : null;

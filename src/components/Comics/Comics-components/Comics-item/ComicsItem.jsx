@@ -1,5 +1,6 @@
 import React from "react";
-import { ComicsDetail } from "../comics-detail/ComicsDetail";
+import { ComicsDetail } from "./Comics-detail/ComicsDetail";
+
 export const ComicsItem = ({comicsList}) => {
     const [isComicsChosen, setIsComicsChosen] = React.useState(false);
     const [comicsDetailData, setComicsDetailData] = React.useState();
