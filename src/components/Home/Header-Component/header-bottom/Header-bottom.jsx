@@ -19,11 +19,11 @@ export const HeaderBottom = () => {
         fetchRandomCharacter()
     }
 
-    const descriptionCondition = isChosenRandom ?  randomChar?.description === '' || randomChar?.description === ' ' ? "Character without desctiption"
-        : randomChar?.description 
-        : `As the Norse God of thunder and lightning, 
-        Thor wields one of the greatest weapons ever made, the enchanted hammer Mjolnir.
-         While others have described Thor as an over-muscled, oafish imbecile, he's quite smart and compassionate...`;
+    
+const randomCharDesc = randomChar?.description === '' || randomChar?.description === ' ' ? "Character without desctiption" : randomChar?.description ;
+const descriptionCondition =  isChosenRandom ? randomCharDesc :  `As the Norse God of thunder and lightning, 
+Thor wields one of the greatest weapons ever made, the enchanted hammer Mjolnir.
+ While others have described Thor as an over-muscled, oafish imbecile, he's quite smart and compassionate...`;
 
     return (
         <div className="header-bottom">

@@ -1,7 +1,5 @@
 import React from 'react';
 import { FetchData } from '../../../../assets/services/query-functions';
-import { CharCard } from './Char-card/Char-card';
-import { ChoseCharInfo } from './Chosen-char-info/Chosen-char-info';
 import { loadDataPattern } from '../../../../assets/services/query-functions';
 import './char-lib.scss'
 
@@ -118,6 +116,96 @@ const listFilter =  (prop) => {
 
             <ChoseCharInfo setIsActive={setIsCharActive}  onFilter={listFilter} chosenCharData={chosenChar}/>
             
+        </div>
+    )
+}
+
+const ChoseCharInfo = ({chosenCharData, onFilter, }) => {
+    const description = chosenCharData ? chosenCharData.description : null;
+    
+        return ( 
+            <div  className="chosen-char-info">
+                    <div className="choosen-char">
+                        <div className="header">
+                            <div className="header-left">
+                                <img width={150} height={150} src={chosenCharData ? chosenCharData.thumbnail.path + '.' + chosenCharData.thumbnail.extension : "img/loki.svg" }alt="" />
+                            </div>
+                            <div className="header-right">
+                                <h2>{chosenCharData ? chosenCharData.name : "Char Name"}</h2>
+    
+                                <div className="action-btn">
+                                <button className="main-btn-class"><a href={chosenCharData?.urls[0].url} target="_blank" rel="noreferrer">HOMEPAGE</a></button>
+                                <button className=" main-btn-class"><a href={chosenCharData?.urls[1].url} target="_blank" rel="noreferrer">WIKI</a></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div className="body">
+                            <div className="char-legend">
+                              {description === ' ' || description === '' ?  'Character without any description. He will get one in close time' : description}
+                            </div>
+    
+                            <ChosemCharComiscList comicsList={chosenCharData?.comics} />
+                        </div>
+                    </div>
+    
+                    <CharFilter  filterMethod={onFilter} />
+                </div>
+        )
+    }
+
+    
+const ChosemCharComiscList = ({comicsList}) => {
+    return (
+        <div className="char-comics-list">
+            <h2>Comics:</h2>
+            <ul className="char-comics-list">
+                {comicsList ? comicsList.items.map((item, index) => {
+                    return <li key={index} className="char-comics-list-elem"><a href={item.resourceURI} target="_blanck">{item.name}</a></li>
+                }) : <h3>There is no comics exist with this Character</h3>}
+                
+            </ul>
+        </div>
+    )
+}
+
+const CharFilter = ({filterMethod}) => {
+
+    const [filterValue, setFilterValue] = React.useState();
+    const onInputChange = (e) => {
+        setFilterValue(e.target.value)
+    }
+
+    return (
+        <div className="char-search">
+                    <h2>Or find out a character by name: </h2>
+
+                    <div className="search-form">
+                        <input type="text"  placeholder="Enter name" onChange={onInputChange}/>
+                        <button className="main-btn-class" onClick={()=> filterMethod(filterValue)}>FIND</button>
+                    </div>
+         </div>
+    )
+}
+
+const CharCard = ({charName, charImg, onCardClick, isCharActive, id}) => {
+    
+    return (
+        <div 
+            id={id} 
+            className={ isCharActive ? "active-char-card": "char-card"}
+            onClick={onCardClick}
+            
+        >
+            <img 
+                id={id}  
+                height={200} 
+                width={200} 
+                src={charImg ? charImg : "img/loki.svg"} 
+                alt=""
+                onClick={onCardClick} 
+             />
+            <h1 className='char-name'>{charName ? charName : 'Loading'}</h1>
         </div>
     )
 }
