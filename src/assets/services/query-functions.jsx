@@ -10,9 +10,9 @@ export const loadDataPattern =  async (url,  urlAPIKey, dataOffset, dataOffestEx
 }
 
 
-export const  FetchData = async (url, setData) => {
-    const charListResponse = await axios.get(url);
-    setData(charListResponse.data.data.results);
-   }
+// export const  FetchData = async (url, setData) => {
+//     const charListResponse = await axios.get(url);
+//     // setData(charListResponse.data.data.results);
+// }
 
    

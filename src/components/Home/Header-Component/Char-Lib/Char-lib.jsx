@@ -1,5 +1,5 @@
 import React from 'react';
-import { FetchData } from '../../../../assets/services/query-functions';
+import axios from 'axios';
 import { loadDataPattern } from '../../../../assets/services/query-functions';
 import './char-lib.scss'
 
@@ -23,7 +23,13 @@ export const CharLib = () => {
     const [loadCord, setLoadCord] = React.useState(false);
 
  React.useEffect(() => {
-           FetchData("https://gateway.marvel.com:443/v1/public/characters?limit=9&offset=510&apikey=c2c707041ac2c3a1f2a0791a1911d42b" , setCharList);
+        //    FetchData("https://gateway.marvel.com:443/v1/public/characters?limit=9&offset=510&apikey=c2c707041ac2c3a1f2a0791a1911d42b" , setCharList);
+          const  FetchData = async () => {
+                const charListResponse = await axios.get("https://gateway.marvel.com:443/v1/public/characters?limit=9&offset=510&apikey=c2c707041ac2c3a1f2a0791a1911d42b");
+                setCharList(charListResponse.data.data.results);
+           }
+
+           FetchData();
         }, []);
 
 React.useEffect(() => {
@@ -38,7 +44,15 @@ React.useEffect(() => {
 
     infinityLoad();
 
-    if (loadCord) loadDataPattern("https://gateway.marvel.com:443/v1/public/characters?limit=9&", "&apikey=c2c707041ac2c3a1f2a0791a1911d42b", charsOffset, 9, setCharsOffset, setCharList, setLoadCord);
+    if (loadCord) loadDataPattern(
+        "https://gateway.marvel.com:443/v1/public/characters?limit=9&", 
+        "&apikey=c2c707041ac2c3a1f2a0791a1911d42b", 
+        charsOffset, 
+        9, 
+        setCharsOffset, 
+        setCharList, 
+        setLoadCord
+    );
 
 }, [loadCord, charsOffset]);
 

@@ -1,6 +1,6 @@
 import "./comics.scss";
 import React from "react";
-import { FetchData } from "../../../assets/services/query-functions";
+import axios from "axios";
 import { loadDataPattern } from "../../../assets/services/query-functions";
 
 
@@ -23,10 +23,14 @@ export const Comics = () => {
         setIsComicsChosen(false)
     }
 
-    const wrapperRef = React.useRef(null);
-
     React.useEffect(() => {
-        FetchData("https://gateway.marvel.com:443/v1/public/comics?limit=8&offset=210&apikey=c2c707041ac2c3a1f2a0791a1911d42b", setComicsList)
+        // FetchData("https://gateway.marvel.com:443/v1/public/comics?limit=8&offset=210&apikey=c2c707041ac2c3a1f2a0791a1911d42b", setComicsList)
+        const  FetchData = async () => {
+            const comicsListResponse = await axios.get("https://gateway.marvel.com:443/v1/public/comics?limit=8&offset=210&apikey=c2c707041ac2c3a1f2a0791a1911d42b");
+            setComicsList(comicsListResponse.data.data.results);
+       }
+
+       FetchData();
     }, []);
 
     React.useEffect(() => {
