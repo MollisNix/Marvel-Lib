@@ -1,7 +1,6 @@
-import { Link, useLocation} from "react-router-dom";
+import { NavLink, } from "react-router-dom";
 import "./Layout.scss"
 export const Layout = ({children} ) => {
-    const location = useLocation(); 
     return (
     <>
             <header className="header-block">
@@ -11,16 +10,12 @@ export const Layout = ({children} ) => {
                     <nav className="navigation">
                         <ul className="navigation-list">
                             <li>
-                                <Link to={"/"} className={location.pathname === "/" ? "menu-btn bnt-after active" : "menu-btn bnt-after" }>Characters</Link>
+                                <NavLink to={"/"} activeClassName={'active'} className={"menu-btn bnt-after"}>Characters</NavLink>
                             </li>
 
-                    { location.pathname === "/comics" ?  <li>
-                                                <Link className="menu-btn comics-btn active"  >Comics </Link>
-                                            </li> 
-                                            :
-                                            <li>
-                                                <Link to={"comics"}className="menu-btn comics-btn">Comics</Link>
-                                            </li> }
+                           <li>
+                                <NavLink to={"/comics"} activeClassName={'active'} className="menu-btn comics-btn">Comics</NavLink>
+                            </li> 
                         </ul>
                     </nav>
                 </div>
